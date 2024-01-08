@@ -27,25 +27,38 @@ public class FoodOrdering extends Functions{  // superclass/subclass
     private static final int USER_LEVEL_CASHIER = 2;
     private static final int USER_LEVEL_KITCHEN_STAFF = 3;
     
+    public static String documentFilePath = System.getProperty("user.dir")+File.separator+"documents"+File.separator + "accounts.txt";
+    public static String securityFilePath = System.getProperty("user.dir")+File.separator+"documents"+File.separator + "security.txt";
+
+    
     
     public static void main(String[] args) {
         showLogo(); // inherited
         Scanner sc = new Scanner(System.in);
-        
-        System.out.println("Welcome to the Account System!");
-        System.out.println("1. Create Kitchen Staff Account");
-        System.out.println("2. Create Cashier Account");
-        System.out.println("3. Login as Kitchen Staff");
-        System.out.println("4. Login as Cashier");
-        System.out.println("5. Forgot Password");
-        System.out.println("6. Exit");
-        System.out.print("Enter your choice: ");
+        showLandingPage();
         int choice = sc.nextInt();
-        sc.nextLine();
-        
+  
         switch(choice) {
-            case 1:
+            case 1 -> {
+                System.out.print("create username: ");
+                String username = sc.nextLine();
+                System.out.print("create password: ");
+                String password = sc.nextLine();
                 
+                if(Functions.createAccount("Kitchen Staff", USER_LEVEL_KITCHEN_STAFF, username, password, documentFilePath)) {
+                    System.out.println("Created account");
+                }
+            }
+            case 2 -> {
+                System.out.print("Enter Username: ");
+                String username = sc.nextLine();
+                System.out.print("Enter password: ");
+                String password = sc.nextLine();
+                
+                if(isValidLogin(username, password, documentFilePath)) {
+                    
+                }
+            }
         }
     }
 }
