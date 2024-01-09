@@ -1,2 +1,4 @@
-User Level: 3;Kitchen Staff Username: ; Password: admin; Valid: true
-3;Kitchen Staffadmin;true
+3;Kitchen Staff;admin;admin;true
+3;Kitchen Staff;admin;admin;true
+3;Kitchen Staff;admin;admin;true
+2;Cashier;admin123;admin123;true
