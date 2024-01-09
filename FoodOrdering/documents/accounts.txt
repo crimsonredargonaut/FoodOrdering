@@ -1,0 +1,2 @@
+User Level: 3;Kitchen Staff Username: ; Password: admin; Valid: true
+3;Kitchen Staffadmin;true
